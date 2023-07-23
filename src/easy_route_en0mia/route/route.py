@@ -10,22 +10,12 @@ from src.easy_route_en0mia.middleware.abstract_middleware import AbstractMiddlew
 
 class Route(object):
     """This class represents a Route object, with its middlewares and its controller."""
-    def __init__(self, request: Request):
+    def __init__(self, request: Request, controller: AbstractController):
         self.request = request
-        self.controller = None
+        self.controller = controller
         self.middlewares = []
 
-    def with_controller(self, controller: AbstractController) -> Self:
-        """Sets the Controller.
-        A Route can contain only one controller that will be executed after all the middlewares
-        have been validated.
-        :param controller: The Controller to call.
-        :return: Self.
-        """
-        self.controller = controller
-        return self
-
-    def with_middleware(self, middleware: AbstractMiddleware) -> Self:
+    def add_middleware(self, middleware: AbstractMiddleware) -> Self:
         """Adds a middleware to the middlewares stack.
         :param middleware: The Middleware to add to the stack.
         :return: Self.
@@ -33,7 +23,7 @@ class Route(object):
         self.middlewares += [middleware]
         return self
 
-    def with_middlewares(self, middlewares: list[AbstractMiddleware]) -> Self:
+    def add_middlewares(self, middlewares: list[AbstractMiddleware]) -> Self:
         """Adds a list of middlewares to the middlewares stack.
         :param middlewares: The Middlewares to add to the stack.
         :return: Self.
@@ -52,4 +42,4 @@ class Route(object):
             result = middleware.dispatch(self.request)
             if result:
                 return result
-        return self.controller.execute()
+        return self.controller.execute(self.request)
