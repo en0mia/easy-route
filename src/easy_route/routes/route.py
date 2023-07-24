@@ -4,8 +4,8 @@ from typing import Self
 
 from flask import Request, Response
 
-from easy_route_en0mia.controllers.abstract_controller import AbstractController
-from easy_route_en0mia.middlewares.abstract_middleware import AbstractMiddleware
+from easy_route.controllers.abstract_controller import AbstractController
+from easy_route.middlewares.abstract_middleware import AbstractMiddleware
 
 
 class Route(object):
