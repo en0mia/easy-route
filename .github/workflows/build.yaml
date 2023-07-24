@@ -24,6 +24,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Tests and coverage report
         run: |
+          export PYTHONPATH=./src
           coverage run -m pytest --junitxml="tests-report.xml"
           coverage xml
       - name: SonarCloud Scan
