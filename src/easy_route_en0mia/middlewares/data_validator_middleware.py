@@ -4,7 +4,7 @@ from typing import Optional
 
 from flask import Request, Response
 
-from src.easy_route_en0mia.middlewares.abstract_middleware import AbstractMiddleware
+from easy_route_en0mia.middlewares.abstract_middleware import AbstractMiddleware
 
 
 class DataValidatorMiddleware(AbstractMiddleware):
