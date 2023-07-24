@@ -16,7 +16,7 @@ class DataProvider(ABC):
         pass
 
     @abstractmethod
-    def get_data(self, request: Request):
+    def get_data(self, request: Request) -> dict:
         pass
 
 
