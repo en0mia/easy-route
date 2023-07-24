@@ -11,24 +11,25 @@ from easy_route.middlewares.data_validator_middleware import DataValidatorMiddle
 class TestDataValidatorMiddleware(unittest.TestCase):
     def setUp(self) -> None:
         self.request = MagicMock()
+        self.data_provider = MagicMock()
         self.validator = MagicMock()
 
     def tearDown(self) -> None:
         self.request = None
+        self.data_provider = None
         self.validator = None
 
     def testDispatch_return400_whenDataIsEmpty(self):
         # Arrange
         rules = {}
-        middleware = DataValidatorMiddleware(rules)
-
-        self.request.get_json.return_value = None
+        middleware = DataValidatorMiddleware(rules, self.data_provider)
+        self.data_provider.get_data.return_value = None
 
         # Act
         result = middleware.dispatch(self.request)
 
         # Assert
-        self.request.get_json.assert_called_once()
+        self.data_provider.get_data.assert_called_once()
         self.assertEqual(400, result.status_code)
         self.assertFalse(result.data)
 
@@ -37,10 +38,10 @@ class TestDataValidatorMiddleware(unittest.TestCase):
         rules = {
             'uuid': self.validator.is_uuid
         }
-        middleware = DataValidatorMiddleware(rules)
+        middleware = DataValidatorMiddleware(rules, self.data_provider)
 
         self.validator.is_uuid.return_value = False
-        self.request.get_json.return_value = {
+        self.data_provider.get_data.return_value = {
             'uuid': 'invalid uuid'
         }
 
@@ -48,7 +49,7 @@ class TestDataValidatorMiddleware(unittest.TestCase):
         result = middleware.dispatch(self.request)
 
         # Assert
-        self.request.get_json.assert_called_once()
+        self.data_provider.get_data.assert_called_once()
         self.assertEqual(400, result.status_code)
         self.assertFalse(result.data)
 
@@ -57,16 +58,16 @@ class TestDataValidatorMiddleware(unittest.TestCase):
         rules = {
             'uuid': self.validator.is_uuid
         }
-        middleware = DataValidatorMiddleware(rules)
+        middleware = DataValidatorMiddleware(rules, self.data_provider)
 
         self.validator.is_uuid.return_value = False
-        self.request.get_json.return_value = {}
+        self.data_provider.get_data.return_value = {}
 
         # Act
         result = middleware.dispatch(self.request)
 
         # Assert
-        self.request.get_json.assert_called_once()
+        self.data_provider.get_data.assert_called_once()
         self.validator.is_uuid.assert_not_called()
         self.assertEqual(400, result.status_code)
         self.assertFalse(result.data)
@@ -77,11 +78,11 @@ class TestDataValidatorMiddleware(unittest.TestCase):
             'uuid': self.validator.is_uuid,
             'name': lambda name: self.validator.is_string(name) and name,
         }
-        middleware = DataValidatorMiddleware(rules)
+        middleware = DataValidatorMiddleware(rules, self.data_provider)
 
         self.validator.is_uuid.return_value = True
         self.validator.is_string.return_value = True
-        self.request.get_json.return_value = {
+        self.data_provider.get_data.return_value = {
             'uuid': str(uuid.uuid4()),
             'name': 'name'
         }
@@ -90,5 +91,5 @@ class TestDataValidatorMiddleware(unittest.TestCase):
         result = middleware.dispatch(self.request)
 
         # Assert
-        self.request.get_json.assert_called_once()
+        self.data_provider.get_data.assert_called_once()
         self.assertIsNone(result)
