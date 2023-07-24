@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "easy_route_en0mia"
+name = "easy_route"
 version = "0.0.1"
 authors = [
   { name="Simone Nicol", email="en0mia.dev@gmail.com" },
 ]
-description = "A simple routing package"
+description = "A simple Flask routing package."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",

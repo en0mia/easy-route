@@ -5,7 +5,7 @@ import unittest
 import uuid
 from unittest.mock import MagicMock
 
-from easy_route_en0mia.middlewares.data_validator_middleware import DataValidatorMiddleware
+from easy_route.middlewares.data_validator_middleware import DataValidatorMiddleware
 
 
 class TestDataValidatorMiddleware(unittest.TestCase):
