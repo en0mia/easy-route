@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 from flask import Response
 
-from src.easy_route_en0mia.route.route import Route
+from src.easy_route_en0mia.routes.route import Route
 
 
 class TestRoute(unittest.TestCase):
