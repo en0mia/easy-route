@@ -17,12 +17,15 @@ class DataProvider(ABC):
 
     @abstractmethod
     def get_data(self, request: Request) -> Optional[dict]:
+        """Returns the data to validate as key-value pairs.
+        :param request: the Request from which the data should be extracted
+        :return: dict | None
+        """
         pass
 
 
 class DataValidatorMiddleware(AbstractMiddleware):
     """Validates the JSON input using a rule mapping."""
-
     def __init__(self, rules: dict, data_provider: DataProvider):
         """
         :param rules: A map in the form field_name => validation_method
