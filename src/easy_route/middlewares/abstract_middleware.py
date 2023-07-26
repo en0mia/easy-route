@@ -8,9 +8,6 @@ from flask import Request, Response
 
 class AbstractMiddleware(ABC):
     """An abstract class representing a Middleware."""
-    def __init__(self):
-        pass
-
     @abstractmethod
     def dispatch(self, request: Request) -> Optional[Response]:
         """Executes the middleware.
