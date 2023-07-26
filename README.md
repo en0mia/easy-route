@@ -83,10 +83,10 @@ The middleware is the first component in the Route stack.
 
 It takes care of operations like data validation, authentication check, ...
 
-Each route can contain zero, one or more middlewares, that will be executed before the controller one by one, in
+Each route can contain zero, one or more middlewares that will be executed before the controller one by one, in
 insertion order.
 
-A middleware can stop the Route execution by returning a Response object, for instance we may return a `HTTP 400`
+A middleware can stop the Route execution by returning a Response object, for instance it may return a `HTTP 400`
 response if the input data is invalid, or a `HTTP 401` if the user is not authenticated.
 
 If the middleware succeeds, it returns `None` to tell the Route to go ahead with other components.
@@ -105,10 +105,6 @@ A Route, by definition, can contain only a single Controller.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 This package containes a few dependencies, specified in `requirements.txt`.
 
@@ -148,13 +144,13 @@ Please, refer to the [pip docs](https://pip.pypa.io/en/latest/topics/vcs-support
 ## Usage
 The usage of this package is pretty straightforward.
 
-Firstly, we have to create a Route object:
+Firstly, you have to create a Route object:
 
 ```python
 route = Route(request, MyController())
 ```
 
-Then we can add one or more middleware(s):
+Then you can add one or more middleware(s):
 
 ```python
 route.add_middleware(MyMiddleware())
@@ -163,12 +159,10 @@ route.add_middleware(MyMiddleware())
 route.add_middlewares([MyMiddleware(), SecondMiddleware()])
 ```
 
-After the middlewares we can run the route and return its response:
+After the middlewares you can run the route and return its response:
 
 ```python
-result = route.dispatch()
-
-return result
+return route.dispatch()
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,6 +197,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Project Link: [https://github.com/en0mia/easy-route](https://github.com/en0mia/easy-route)
+
+## This template
+Kudos for this README template to [othneildrew](https://github.com/othneildrew).
+
+You can find the repo [here](https://github.com/othneildrew/Best-README-Template).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
