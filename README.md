@@ -217,4 +217,4 @@ Project Link: [https://github.com/en0mia/easy-route](https://github.com/en0mia/e
 [issues-shield]: https://img.shields.io/github/issues/en0mia/easy-route.svg?style=for-the-badge
 [issues-url]: https://github.com/en0mia/easy-route/issues
 [license-shield]: https://img.shields.io/github/license/en0mia/easy-route.svg?style=for-the-badge
-[license-url]: https://github.com/en0mia/easy-route/blob/master/LICENSE
+[license-url]: https://github.com/en0mia/easy-route/blob/main/LICENSE
