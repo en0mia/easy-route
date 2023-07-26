@@ -12,8 +12,6 @@ class DataProvider(ABC):
     """Since the data can be passed into many ways in HTTP Requests, this abstract class
     defines a provider to extract the data to validate from the Request.
     """
-    def __init__(self):
-        pass
 
     @abstractmethod
     def get_data(self, request: Request) -> Optional[dict]:
