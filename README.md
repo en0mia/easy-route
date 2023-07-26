@@ -193,7 +193,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -217,4 +217,4 @@ Project Link: [https://github.com/en0mia/easy-route](https://github.com/en0mia/e
 [issues-shield]: https://img.shields.io/github/issues/en0mia/easy-route.svg?style=for-the-badge
 [issues-url]: https://github.com/en0mia/easy-route/issues
 [license-shield]: https://img.shields.io/github/license/en0mia/easy-route.svg?style=for-the-badge
-[license-url]: https://github.com/en0mia/easy-route/blob/master/LICENSE.txt
+[license-url]: https://github.com/en0mia/easy-route/blob/master/LICENSE
