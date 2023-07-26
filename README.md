@@ -7,8 +7,22 @@
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
 -->
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<h3 align="center">easy-route🚦</h3>
 
-
+  <p align="center">
+    A simple but effective Routing system for Flask projects
+    <br />
+    <a href="https://github.com/en0mia/easy-route"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/en0mia/easy-route/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/en0mia/easy-route/issues">Request Feature</a>
+  </p>
+</div>
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -27,25 +41,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=en0mia_easy-route&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=en0mia_easy-route)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=en0mia_easy-route&metric=coverage)](https://sonarcloud.io/summary/new_code?id=en0mia_easy-route)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=en0mia_easy-route&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=en0mia_easy-route)
-
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-<h3 align="center">easy-route🚦</h3>
-
-  <p align="center">
-    A simple but effective Routing system for Flask projects
-    <br />
-    <a href="https://github.com/en0mia/easy-route"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/en0mia/easy-route/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/en0mia/easy-route/issues">Request Feature</a>
-  </p>
-</div>
 
 
 
