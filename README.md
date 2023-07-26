@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">easy-route🚦</h3>
+<h1 align="center">easy-route🚦</h1>
 
   <p align="center">
     A simple but effective Routing system for Flask projects
